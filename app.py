@@ -24,7 +24,8 @@ st.write("Clustering des publications Facebook avec K-Means")
 # --------------------------------------------------
 @st.cache_data
 def load_data():
-    return df = pd.read_csv("Live_20210128.csv")
+    df = pd.read_csv("Live_20210128.csv")
+    return df
 
 df = load_data()
 
@@ -158,5 +159,6 @@ elif option == "Voir les individus par classe":
 # --------------------------------------------------
 st.subheader("Interprétation des clusters (moyennes)")
 st.dataframe(df_clean.groupby("cluster").mean())
+
 
 
